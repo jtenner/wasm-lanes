@@ -206,4 +206,9 @@ export class SIMD<T> {
   }
 
   @inline public get ops(): SIMD<T> { return this; }
+
+  @inline public storeAt(pointer: usize): SIMD<T> {
+    v128.store(pointer, changetype<v128>(this));
+    return this;
+  }
 }

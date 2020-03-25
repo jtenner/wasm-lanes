@@ -11,6 +11,8 @@ export class SIMD<T> {
   public static load_splat<U>(ptr: usize): SIMD<U>;
   /** Convert a v128 to a SIMD<U> */
   public static from<U>(item: v128): SIMD<U>;
+  /** Store all 128 bits at a given pointer. */
+  public storeAt(pointer: usize): SIMD<T>
   /** Get the length of this SIMD instance. */
   readonly length: i32;
   /** Multiply two SIMD values together. */
