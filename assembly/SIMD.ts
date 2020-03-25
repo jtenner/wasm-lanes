@@ -43,8 +43,19 @@ export class SIMD<T> {
     return this.__uget(index);
   }
 
-  @operator("{}") @inline protected __uget(index: i32): T {
+  @unsafe @operator("{}") @inline protected __uget(index: i32): T {
     return v128.extract_lane<T>(changetype<v128>(this), index);
+  }
+
+  @inline public replace_lane(index: i32, value: T): SIMD<T> {
+    assert(index < this.length);
+    return this.replace_lane_unchecked(index, value);
+  }
+
+  @unsafe @inline public replace_lane_unchecked(index: i32, value: T): SIMD<T> {
+    return changetype<SIMD<T>>(
+      v128.replace_lane<T>(changetype<v128>(this), index, value)
+    );
   }
 
   @operator("*") @inline public mul(operand: SIMD<T>): SIMD<T> {
