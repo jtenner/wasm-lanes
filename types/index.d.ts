@@ -60,26 +60,26 @@ export class SIMD<T> {
   /** Truncate each lane to an integer value. */
   public trunc_sat<U>(): SIMD<U>;
   /** Cast this SIMD to have i8 lanes. */
-  public i8: SIMD<i8>;
+  public readonly i8: SIMD<i8>;
   /** Cast this SIMD to have u8 lanes. */
-  public u8: SIMD<u8>;
+  public readonly u8: SIMD<u8>;
   /** Cast this SIMD to have i16 lanes. */
-  public i16: SIMD<i16>;
+  public readonly i16: SIMD<i16>;
   /** Cast this SIMD to have u16 lanes. */
-  public u16: SIMD<u16>;
+  public readonly u16: SIMD<u16>;
   /** Cast this SIMD to have i32 lanes. */
-  public i32: SIMD<i32>;
+  public readonly i32: SIMD<i32>;
   /** Cast this SIMD to have u32 lanes. */
-  public u32: SIMD<u32>;
+  public readonly u32: SIMD<u32>;
   /** Cast this SIMD to have i64 lanes. */
-  public i64: SIMD<i64>;
+  public readonly i64: SIMD<i64>;
   /** Cast this SIMD to have u64 lanes. */
-  public u64: SIMD<u64>;
+  public readonly u64: SIMD<u64>;
   /** Cast this SIMD to have f32 lanes. */
-  public f32: SIMD<f32>;
+  public readonly f32: SIMD<f32>;
   /** Cast this SIMD to have f64 lanes. */
-  public f64: SIMD<f64>;
+  public readonly f64: SIMD<f64>;
 
   /** Suppress VSCode type errors by casting this value to any in your editor. */
-  public ops: any;
+  public readonly ops: any;
 }
