@@ -3,6 +3,18 @@
 export class SIMD<T> {
   [key: number]: T;
 
+  @inline public static qfma<U>(a: SIMD<U>, b: SIMD<U>, c: SIMD<U>): SIMD<U> {
+    return changetype<SIMD<U>>(
+      v128.qfma(changetype<v128>(a), changetype<v128>(b), changetype<v128>(c))
+    );
+  }
+
+  @inline public static qfms<U>(a: SIMD<U>, b: SIMD<U>, c: SIMD<U>): SIMD<U> {
+    return changetype<SIMD<U>>(
+      v128.qfms(changetype<v128>(a), changetype<v128>(b), changetype<v128>(c))
+    );
+  }
+
   @inline public static load<U>(ptr: usize): SIMD<U> {
     if (!isInteger<U>() || !isFloat<U>()) ERROR("Generic type of SIMD must be numeric.");
     return changetype<SIMD<U>>(v128.load(ptr));

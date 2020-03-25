@@ -3,6 +3,10 @@
 export class SIMD<T> {
   [key: number]: T;
 
+  /** Perform a * b + c for each lane. */
+  public static qfma<U>(a: SIMD<U>, b: SIMD<U>, c: SIMD<U>): SIMD<U>;
+  /** Perform a * b - c for each lane. */
+  public static qfms<U>(a: SIMD<U>, b: SIMD<U>, c: SIMD<U>): SIMD<U>;
   /** Load a SIMD instance from a pointer and a type. */
   public static load<U>(ptr: usize): SIMD<U>;
   /** Create a SIMD with every lane set to value and a type. */
