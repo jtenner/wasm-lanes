@@ -1,0 +1,18 @@
+{
+  "name": "wasm-lanes",
+  "version": "0.1.0",
+  "description": "SIMD primitives to make using SIMD easier in AssemblyScript",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "test": "asp --verbose"
+  },
+  "author": "Joshua Tenner <tenner.joshua@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@as-pect/cli": "3.1.3",
+    "assemblyscript": "0.9.4-nightly.20200316"
+  },
+  "dependencies": {
+    "@assemblyscript/loader": "^0.9.4-nightly.20200316"
+  }
+}
