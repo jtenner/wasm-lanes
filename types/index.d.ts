@@ -19,6 +19,14 @@ export class SIMD<T> {
   public storeAt(pointer: usize): SIMD<T>
   /** Get the length of this SIMD instance. */
   readonly length: i32;
+  /** Replace a lane of this SIMD value with the given value. */
+  public replace_lane(index: i32, value: T): SIMD<T>;
+  /** Replace a lane of this SIMD value with the given value. Unsafe! */
+  public replace_lane_unchecked(index: i32, value: T): SIMD<T>;
+  /** Determine if two SIMD<T> are equal. */
+  public eq(operand: SIMD<T>): bool;
+  /** Determine if two SIMD<T> are unequal. */
+  public neq(operand: SIMD<T>): bool;
   /** Multiply two SIMD values together. */
   public mul(operand: SIMD<T>): SIMD<T>;
   /** Divide two SIMD values together. */

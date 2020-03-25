@@ -149,6 +149,14 @@ export class SIMD<T> {
     );
   }
 
+  @inline @operator("==") public eq(operand: SIMD<T>): bool {
+    return changetype<v128>(this) == changetype<v128>(operand);
+  }
+
+  @inline @operator("!=") public neq(operand: SIMD<T>): bool {
+    return changetype<v128>(this) != changetype<v128>(operand);
+  }
+
   @inline public avgr(operand: SIMD<T>): SIMD<T> {
     return changetype<SIMD<T>>(
       v128.avgr<T>(changetype<v128>(this), operand)

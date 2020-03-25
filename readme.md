@@ -67,6 +67,8 @@ The operators that are overloaded are as follows:
 - Less than `@operator("<") @inline public lt(operand: SIMD<T>): SIMD<T>`
 - Greater than `@operator(">") @inline public gt(operand: SIMD<T>): SIMD<T>`
 - Dot Product `@operator("%") @inline public dot(operand: SIMD<T>): SIMD<T>`
+- Equals `@operator("==") @inline public eq(operand: SIMD<T>): bool`
+- Not Equals `@operator("!=") @inline public neq(operand: SIMD<T>): bool`
 
 ## Casting to different types
 
